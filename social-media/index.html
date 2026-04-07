@@ -12,7 +12,8 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 
-  background-image: url("./Hintergrund.png");
+  /* ✅ PFAD FIX */
+  background-image: url("../Hintergrund.png");
   background-size: cover;
   background-position: center;
 
@@ -125,12 +126,6 @@ h1 {
   box-shadow: 0 0 25px #dd2a7b;
 }
 
-.upload:hover {
-  background: #ffd700;
-  color: black;
-  box-shadow: 0 0 25px #ffd700;
-}
-
 /* FOOTER */
 .footer {
   margin-top: 25px;
@@ -171,7 +166,8 @@ h1 {
     <i class="fab fa-instagram"></i> Instagram
   </a>
 
-  <a class="link" href="index.html">
+  <!-- ✅ FIXED -->
+  <a class="link" href="/Chris-Kleiner/">
     ← Zurück
   </a>
 
@@ -186,8 +182,8 @@ async function loadComponent(id, file) {
   document.getElementById(id).innerHTML = data;
 }
 
-loadComponent("header", "header.html");
-loadComponent("footer", "footer.html");
+loadComponent("header", "../header.html");
+loadComponent("footer", "../footer.html");
 </script>
 
 </body>
