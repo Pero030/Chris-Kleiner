@@ -3,124 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Impressum von Chris Kleiner - Rechtliche Informationen zur Website.">
+<meta property="og:title" content="Impressum - Chris Kleiner">
+<meta property="og:description" content="Impressum der Website von Chris Kleiner">
+<meta property="og:image" content="../Profilbild.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="../Profilbild.jpg">
 <title>Impressum - Chris Kleiner</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../styles.css">
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-
-  background-image: url("../Hintergrund.png");
+  background-image: url("../Hintergrund.webp");
   background-size: cover;
   background-position: center;
-
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
+  background-attachment: fixed;
   text-align: left;
-
-  filter: brightness(1.1);
-}
-
-/* CONTAINER */
-.container {
-  backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.65);
-  padding: 30px 20px;
-  max-width: 600px;
-  width: 100%;
-  border-radius: 20px;
-
-  text-align: left;
-}
-
-/* TITLE */
-h1 {
-  text-align: center;
-  font-size: 32px;
-  color: #ffd700;
-
-  text-shadow: 
-    0 0 10px rgba(255,215,0,0.8),
-    0 0 30px rgba(255,215,0,0.5);
-
-  margin-bottom: 20px;
-}
-
-/* TEXT */
-p {
-  font-size: 14px;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
-/* BUTTON */
-.link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-
-  background: rgba(0, 0, 0, 0.65);
-  color: #ffd700;
-  text-decoration: none;
-  border-radius: 10px;
-
-  border: 1px solid rgba(255,215,0,0.4);
-
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-.link:hover {
-  background: #ffd700;
-  color: black;
-  box-shadow: 0 0 20px #ffd700;
-}
-
-/* FOOTER */
-.footer {
-  margin-top: 25px;
-  font-size: 12px;
-  opacity: 0.7;
-  text-align: center;
-}
-
-.footer a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container wide">
 
 <h1>Impressum</h1>
 
 <p>
-Chris Kleiner<br>
-Postfach [XXXX]<br>
-[PLZ] [ORT]<br>
+<strong>Chris Kleiner</strong><br>
+Künstlername: Chris Kleiner<br>
 Deutschland
 </p>
 
 <p>
-E-Mail: [DEINE E-MAIL-ADRESSE]
+E-Mail: info@chriskleiner.de
 </p>
 
 <p>
 <strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
-Chris Kleiner<br>
-Adresse wie oben
+Chris Kleiner
 </p>
 
 <p>
@@ -138,13 +61,13 @@ Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wi
 Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
 </p>
 
-<!-- ZURÜCK BUTTON -->
-<a class="link" href="/Chris-Kleiner/">⬅ Zurück</a>
+<a class="link inline" href="../">
+  <i class="fas fa-arrow-left"></i> Zurück
+</a>
 
-<!-- FOOTER -->
 <div class="footer">
-  <a href="/Chris-Kleiner/impressum">Impressum</a> | 
-  <a href="/Chris-Kleiner/datenschutz">Datenschutz</a>
+  <a href="./">Impressum</a> | 
+  <a href="../datenschutz/">Datenschutz</a>
 </div>
 
 </div>
