@@ -3,110 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Media | Chris Kleiner</title>
+<title>Social Media</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-
+  font-family: Arial;
   background-image: url("./Hintergrund.png");
   background-size: cover;
-  background-position: center;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
   min-height: 100vh;
+
   color: white;
   text-align: center;
-
-  filter: brightness(1.1);
 }
 
-/* CONTAINER */
 .container {
   backdrop-filter: blur(6px);
   background: rgba(0,0,0,0.65);
+  padding: 30px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
-
-  padding: 30px 20px;
-  max-width: 400px;
-  width: 100%;
+  width: 400px;
 }
 
-/* TITLE */
-h1 {
-  color: #ffd700;
-  font-size: 38px;
-  margin-bottom: 20px;
-
-  text-shadow: 0 0 20px rgba(255,215,0,0.6);
-}
-
-/* LINKS */
 .link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 12px auto;
+  display: block;
+  margin: 10px;
   padding: 15px;
-
   background: rgba(0,0,0,0.65);
+  color: #ffd700;
+  text-decoration: none;
   border-radius: 12px;
-
-  text-decoration: none;
-  color: #ffd700;
-  font-weight: bold;
-
-  transition: 0.3s;
 }
 
-.link i {
-  margin-right: 10px;
-}
-
-/* HOVER */
-.link:hover {
-  transform: scale(1.05);
-}
-
-/* PLATFORM COLORS */
-.youtube:hover {
-  background: #ff0000;
-  color: white;
-  box-shadow: 0 0 25px #ff0000;
-}
-
-.tiktok:hover {
-  background: #111;
-  color: #00f2ea;
-  box-shadow: 0 0 25px #00f2ea;
-}
-
-.spotify:hover {
-  background: #1db954;
-  color: black;
-  box-shadow: 0 0 25px #1db954;
-}
-
-.instagram:hover {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-  color: white;
-  box-shadow: 0 0 25px #dd2a7b;
-}
-
-/* BACK BUTTON */
-.back {
+.footer {
   margin-top: 20px;
-  display: inline-block;
-  color: #ffd700;
-  text-decoration: none;
 }
 </style>
 </head>
@@ -115,29 +51,29 @@ h1 {
 
 <div class="container">
 
-  <h1>Social Media</h1>
+  <div id="header"></div>
 
-  <a class="link youtube" href="https://www.youtube.com/@chriskleinermusic">
-    <i class="fab fa-youtube"></i> YouTube
-  </a>
+  <a class="link" href="https://youtube.com">YouTube</a>
+  <a class="link" href="https://tiktok.com">TikTok</a>
+  <a class="link" href="https://spotify.com">Spotify</a>
+  <a class="link" href="https://instagram.com">Instagram</a>
 
-  <a class="link tiktok" href="https://www.tiktok.com/@chriskleinermusic">
-    <i class="fab fa-tiktok"></i> TikTok
-  </a>
+  <a class="link" href="index.html">← Zurück</a>
 
-  <a class="link spotify" href="https://open.spotify.com/artist/7LBkwPXM2etkM4CMmiU3Ci">
-    <i class="fab fa-spotify"></i> Spotify
-  </a>
-
-  <a class="link instagram" href="https://www.instagram.com/chriskleinermusic/">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-
-  <a class="back" href="index.html">
-    ← Zurück
-  </a>
+  <div id="footer"></div>
 
 </div>
+
+<script>
+async function loadComponent(id, file) {
+  const res = await fetch(file);
+  const data = await res.text();
+  document.getElementById(id).innerHTML = data;
+}
+
+loadComponent("header", "header.html");
+loadComponent("footer", "footer.html");
+</script>
 
 </body>
 </html>
