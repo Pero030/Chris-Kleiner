@@ -15,7 +15,6 @@ body {
   background-image: url("./Hintergrund.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 
   min-height: 100vh;
 
@@ -29,19 +28,15 @@ body {
   filter: brightness(1.1);
 }
 
-/* CONTAINER */
 .container {
   backdrop-filter: blur(6px);
   background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px;
-
   padding: 30px 20px;
   max-width: 400px;
   width: 100%;
 }
 
-/* PROFILE */
 .profile {
   width: 160px;
   margin: 0 auto 20px auto;
@@ -49,111 +44,43 @@ body {
   overflow: hidden;
 
   border: 2px solid rgba(255,215,0,0.4);
-
-  box-shadow: 
-    0 0 25px rgba(255, 215, 0, 0.6),
-    0 0 50px rgba(255, 215, 0, 0.4),
-    0 0 80px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 25px rgba(255,215,0,0.6);
 
   animation: float 3s ease-in-out infinite;
 }
 
 .profile img {
   width: 100%;
-  display: block;
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
 }
 
-/* TITLE */
 h1 {
-  font-size: 42px;
   color: #ffd700;
-
-  text-shadow: 
-    0 0 10px rgba(255,215,0,0.8),
-    0 0 30px rgba(255,215,0,0.5);
-
-  margin-bottom: 10px;
 }
 
-p {
-  font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-/* LINKS */
 .link {
   display: flex;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   margin: 12px auto;
   padding: 15px;
-  max-width: 320px;
 
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.65);
+  border-radius: 12px;
   color: #ffd700;
   text-decoration: none;
-  border-radius: 12px;
-
-  border: 1px solid rgba(255,215,0,0.4);
-
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
   font-weight: bold;
-}
-
-.link i {
-  margin-right: 12px;
-  font-size: 18px;
 }
 
 .link:hover {
   transform: scale(1.05);
 }
 
-/* HOVER COLORS */
-.youtube:hover {
-  background: #ff0000;
-  color: white;
-  box-shadow: 0 0 25px #ff0000;
-}
-
-.tiktok:hover {
-  background: #111;
-  color: #00f2ea;
-  box-shadow: 0 0 25px #00f2ea;
-}
-
-.spotify:hover {
-  background: #1db954;
-  color: black;
-  box-shadow: 0 0 25px #1db954;
-}
-
-.instagram:hover {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-  color: white;
-  box-shadow: 0 0 25px #dd2a7b;
-}
-
-.upload:hover {
-  background: #ffd700;
-  color: black;
-  box-shadow: 0 0 25px #ffd700;
-}
-
-/* FOOTER */
 .footer {
   margin-top: 25px;
-  font-size: 12px;
-  opacity: 0.7;
 }
 </style>
 </head>
@@ -162,44 +89,38 @@ p {
 
 <div class="container">
 
-  <div class="profile">
-    <img src="Profilbild.jpg">
-  </div>
+  <div id="header"></div>
 
-  <h1>Chris Kleiner</h1>
-  <p>Artist • Songwriter • Producer</p>
-
-  <a class="link upload" href="#" target="_blank">
+  <a class="link" href="#">
     <i class="fas fa-music"></i> Musik Einsenden
   </a>
 
-  <!-- SOCIAL MEDIA BUTTON -->
   <a class="link" href="social-media.html">
     <i class="fas fa-share-alt"></i> Social Media
   </a>
 
-  <a class="link spotify" href="https://open.spotify.com/artist/7LBkwPXM2etkM4CMmiU3Ci" target="_blank">
+  <a class="link" href="https://open.spotify.com/artist/7LBkwPXM2etkM4CMmiU3Ci">
     <i class="fab fa-spotify"></i> Spotify
   </a>
 
   <div id="spotify"></div>
 
-  <div class="footer">
-    <a href="impressum.html" style="color:#ffd700;">Impressum</a> | 
-    <a href="datenschutz.html" style="color:#ffd700;">Datenschutz</a>
-  </div>
+  <div id="footer"></div>
 
 </div>
 
 <script>
-function loadEmbeds() {
-  document.getElementById("spotify").innerHTML =
-    '<iframe src="https://open.spotify.com/embed/artist/7LBkwPXM2etkM4CMmiU3Ci" width="100%" height="80" frameborder="0" style="border-radius:12px"></iframe>';
+async function loadComponent(id, file) {
+  const res = await fetch(file);
+  const data = await res.text();
+  document.getElementById(id).innerHTML = data;
 }
 
-window.onload = function() {
-  loadEmbeds();
-}
+loadComponent("header", "header.html");
+loadComponent("footer", "footer.html");
+
+document.getElementById("spotify").innerHTML =
+  '<iframe src="https://open.spotify.com/embed/artist/7LBkwPXM2etkM4CMmiU3Ci" width="100%" height="80"></iframe>';
 </script>
 
 </body>
