@@ -10,13 +10,9 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)),
-    url("./Hintergrund.png");
-
+  background-image: url("./Hintergrund.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 
   min-height: 100vh;
 
@@ -26,59 +22,74 @@ body {
 
   color: white;
   text-align: center;
+
+  filter: brightness(1.1);
 }
 
-/* Container */
+/* CONTAINER */
 .container {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 20px;
   padding: 30px 20px;
   max-width: 500px;
   width: 100%;
-  border-radius: 20px;
 }
 
-/* Titel */
+/* TITLE */
 h1 {
   font-size: 32px;
-  color: #00ffcc;
+  color: #ffd700;
 
   text-shadow: 
-    0 0 10px #00ffcc,
-    0 0 30px #00ffcc;
-
-  margin-bottom: 20px;
+    0 0 10px rgba(255,215,0,0.8),
+    0 0 30px rgba(255,215,0,0.5);
 }
 
-/* Text */
+/* TEXT */
 p {
   font-size: 14px;
   opacity: 0.9;
   line-height: 1.6;
 }
 
-/* Button */
+/* BUTTON */
 .link {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 20px;
 
-  background: rgba(0, 0, 0, 0.6);
-  color: #00ffcc;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffd700;
   text-decoration: none;
   border-radius: 10px;
-  border: 1px solid #00ffcc55;
+
+  border: 1px solid rgba(255,215,0,0.4);
 
   transition: 0.3s;
   font-weight: bold;
 }
 
 .link:hover {
-  background: #00ffcc;
+  background: #ffd700;
   color: black;
-  box-shadow: 0 0 20px #00ffcc;
+  box-shadow: 0 0 20px #ffd700;
 }
+
+/* FOOTER */
 .footer {
   margin-top: 25px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 </style>
 </head>
@@ -100,29 +111,21 @@ Deutschland
 E-Mail: [DEINE E-MAIL-ADRESSE]
 </p>
 
-<br>
-
 <p>
 <strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
 Chris Kleiner<br>
 Adresse wie oben
 </p>
 
-<br>
-
 <p>
 <strong>Haftung für Inhalte</strong><br>
 Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
 </p>
 
-<br>
-
 <p>
 <strong>Haftung für Links</strong><br>
 Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
 </p>
-
-<br>
 
 <p>
 <strong>Urheberrecht</strong><br>
@@ -130,6 +133,12 @@ Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
 </p>
 
 <a class="link" href="index.html">⬅ Zurück</a>
+
+<!-- FOOTER -->
+<div class="footer">
+  <a href="impressum.html">Impressum</a> | 
+  <a href="datenschutz.html">Datenschutz</a>
+</div>
 
 </div>
 
