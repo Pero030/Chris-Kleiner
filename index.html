@@ -28,7 +28,6 @@ body {
   text-align: center;
 }
 
-/* Container */
 .container {
   backdrop-filter: blur(10px);
   padding: 30px 20px;
@@ -36,7 +35,6 @@ body {
   width: 100%;
 }
 
-/* Logo */
 .profile {
   width: 160px;
   margin: 0 auto 20px auto;
@@ -55,14 +53,12 @@ body {
   display: block;
 }
 
-/* Animation */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* Name */
 h1 {
   font-size: 42px;
   color: #00ffcc;
@@ -75,14 +71,12 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Text */
 p {
   font-size: 16px;
   opacity: 0.9;
   margin-bottom: 20px;
 }
 
-/* Buttons */
 .link {
   display: block;
   margin: 10px auto;
@@ -120,7 +114,6 @@ p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Footer */
 .footer {
   margin-top: 25px;
   font-size: 12px;
@@ -138,19 +131,20 @@ p {
   </div>
 
   <h1>Chris Kleiner 🎤</h1>
-
   <p>Emotionaler Deutschrap 🎧</p>
 
   <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSeT4H7o8j10O9iYUZMKZwRAbm4R5x-eHCzII8gPRNBpYJtVDA/viewform" target="_blank">🎵 Musik Einsenden</a>
-  <a class="link" href="#" target="_blank">🎵 Youtube</a>
+  <a class="link" href="#">🎵 Youtube</a>
   <a class="link" href="https://www.tiktok.com/@chriskleinermusic">🎤 TikTok</a>
-  <a class="link" href="https://open.spotify.com/intl-de/artist/7LBkwPXM2etkM4CMmiU3Ci" target="_blank">🎵 Spotify</a>
-  <a class="link" href="#" target="_blank">Instagram</a>
+  <a class="link" href="https://open.spotify.com/artist/7LBkwPXM2etkM4CMmiU3Ci" target="_blank">🎵 Spotify</a>
+  <a class="link" href="#">Instagram</a>
 
   <!-- Spotify -->
   <div id="spotify" class="section"></div>
 
-  <!-- Footer -->
+  <!-- YouTube -->
+  <div id="youtube" class="section"></div>
+
   <div class="footer">
     <a href="impressum.html" style="color:#00ffcc;">Impressum</a> | 
     <a href="datenschutz.html" style="color:#00ffcc;">Datenschutz</a>
@@ -216,11 +210,11 @@ function declineCookies() {
 }
 
 function loadEmbeds() {
-  document.getElementById("youtube").innerHTML =
-    '<iframe width="100%" height="180" src="https://www.youtube.com/embed/pZixQDe22rs" frameborder="0" allowfullscreen style="border-radius:12px; box-shadow:0 0 20px #00ffcc;"></iframe>';
-
   document.getElementById("spotify").innerHTML =
-    '<iframe src="https://open.spotify.com/embed/artist/SPOTIFY_ID" width="100%" height="80" frameborder="0" style="border-radius:12px"></iframe>';
+    '<iframe src="https://open.spotify.com/embed/artist/7LBkwPXM2etkM4CMmiU3Ci" width="100%" height="80" frameborder="0" style="border-radius:12px"></iframe>';
+
+  document.getElementById("youtube").innerHTML =
+    '<iframe width="100%" height="180" src="https://www.youtube.com/embed/pZixQDe22rs" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>';
 }
 
 window.onload = function() {
