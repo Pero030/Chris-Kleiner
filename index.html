@@ -2,146 +2,32 @@
 <html lang="de">
 <head>
 
-<!-- ✅ REDIRECT FIX -->
 <script>
-if (location.pathname.endsWith("index.html")) {
-  location.replace("/Chris-Kleiner/");
+if (location.pathname.endsWith("index.html") && !location.pathname.includes("/impressum/") && !location.pathname.includes("/datenschutz/") && !location.pathname.includes("/social-media/")) {
+  location.replace(location.pathname.replace("index.html", ""));
 }
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chris Kleiner - Producer, Songwriter, Beatmaker, Mixing & Mastering Engineer. Entdecke meine Musik und bleib verbunden.">
+<meta property="og:title" content="Chris Kleiner - Music Producer">
+<meta property="og:description" content="Producer • Songwriter • Beatmaker • Mixing & Mastering Engineer">
+<meta property="og:image" content="./Profilbild.jpg">
+<meta property="og:url" content="https://chriskleiner.github.io/Chris-Kleiner/">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="./Profilbild.jpg">
 <title>Chris Kleiner</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="./styles.css">
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-
   background-image: url("./Hintergrund.png");
   background-size: cover;
   background-position: center;
-
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
-  text-align: center;
-
-  filter: brightness(1.1);
-}
-
-/* CONTAINER */
-.container {
-  backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 20px;
-  padding: 30px 20px;
-  max-width: 400px;
-  width: 100%;
-}
-
-/* PROFILE */
-.profile {
-  width: 160px;
-  margin: 0 auto 20px auto;
-  border-radius: 25px;
-  overflow: hidden;
-
-  border: 2px solid rgba(255,215,0,0.4);
-
-  box-shadow: 
-    0 0 25px rgba(255, 215, 0, 0.6),
-    0 0 50px rgba(255, 215, 0, 0.4),
-    0 0 80px rgba(255, 215, 0, 0.2);
-
-  animation: float 3s ease-in-out infinite;
-}
-
-.profile img {
-  width: 100%;
-}
-
-.telegram:hover {
-  background: #0088cc;
-  color: white;
-  box-shadow: 0 0 25px #0088cc;
-}
-
-/* FLOAT */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-/* TITLE */
-h1 {
-  color: #ffd700;
-
-  text-shadow: 
-    0 0 10px rgba(255,215,0,0.8),
-    0 0 30px rgba(255,215,0,0.5);
-}
-
-/* BUTTONS */
-.link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  margin: 12px auto;
-  padding: 15px;
-
-  background: rgba(0,0,0,0.65);
-  border-radius: 12px;
-
-  color: #ffd700;
-  text-decoration: none;
-  font-weight: bold;
-
-  border: 1px solid rgba(255,215,0,0.5); /* ✅ GELBE UMRANDUNG */
-
-  transition: all 0.3s ease;
-}
-
-.link:hover {
-  transform: scale(1.05);
-}
-
-/* HOVER COLORS */
-.upload:hover {
-  background: #ffd700;
-  color: black;
-  box-shadow: 0 0 25px #ffd700;
-}
-
-.social:hover {
-  background: #00ffcc;
-  color: black;
-  box-shadow: 0 0 25px #00ffcc;
-}
-
-/* FOOTER */
-.footer {
-  margin-top: 25px;
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-.footer a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
+  background-attachment: fixed;
 }
 </style>
 </head>
@@ -150,9 +36,14 @@ h1 {
 
 <div class="container">
 
-  <div id="header"></div>
+  <div class="profile">
+    <img src="./Profilbild.jpg" alt="Chris Kleiner Profilbild">
+  </div>
 
-  <a class="link upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeT4H7o8j10O9iYUZMKZwRAbm4R5x-eHCzII8gPRNBpYJtVDA/viewform">
+  <h1>Chris Kleiner</h1>
+  <p>Producer • Songwriter • Beatmaker • Mixing & Mastering Engineer</p>
+
+  <a class="link upload" href="#">
     <i class="fas fa-music"></i> Musik Einsenden
   </a>
 
@@ -160,29 +51,20 @@ h1 {
     <i class="fab fa-telegram"></i> Community Telegram
   </a>
 
-  <a class="link social" href="social-media">
+  <a class="link social" href="./social-media/">
     <i class="fas fa-share-alt"></i> Social Media
   </a>
 
-  <div id="spotify"></div>
+  <div class="spotify-embed">
+    <iframe src="https://open.spotify.com/embed/artist/7LBkwPXM2etkM4CMmiU3Ci" style="border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
 
-  <div id="footer"></div>
+  <div class="footer">
+    <a href="./impressum/">Impressum</a> | 
+    <a href="./datenschutz/">Datenschutz</a>
+  </div>
 
 </div>
-
-<script>
-async function loadComponent(id, file) {
-  const res = await fetch(file);
-  const data = await res.text();
-  document.getElementById(id).innerHTML = data;
-}
-
-loadComponent("header", "header.html");
-loadComponent("footer", "footer.html");
-
-document.getElementById("spotify").innerHTML =
-  '<iframe src="https://open.spotify.com/embed/artist/7LBkwPXM2etkM4CMmiU3Ci" width="100%" height="80" style="border-radius:12px;"></iframe>';
-</script>
 
 </body>
 </html>
