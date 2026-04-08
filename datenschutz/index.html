@@ -19,13 +19,26 @@ body {
   background-image: url("../Hintergrund.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   text-align: left;
+  min-height: 100vh;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 481px) {
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../Hintergrund.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
   body {
-    background-attachment: scroll;
+    background: transparent;
   }
 }
 </style>
