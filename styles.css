@@ -175,6 +175,14 @@ p {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-top: 10px;
+  width: 100%;
+}
+
+.grid .link {
+  margin: 0;
+  width: 100%;
+  min-height: 50px;
+  font-size: 14px;
 }
 
 .grid .link:last-child {
@@ -231,6 +239,12 @@ p {
   .grid {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+  
+  .grid .link {
+    font-size: 13px;
+    min-height: 45px;
+    padding: 10px;
   }
   
   .grid .link:last-child {
