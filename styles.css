@@ -172,25 +172,16 @@ p {
 /* ========== GRID ========== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 50px;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-top: 10px;
   width: 100%;
-  align-items: stretch;
-  justify-items: stretch;
 }
 
 .grid .link {
-  margin: 0 !important;
-  width: 100% !important;
-  height: 50px !important;
-  min-height: 50px !important;
-  max-height: 50px !important;
-  font-size: 14px;
-  box-sizing: border-box;
-  overflow: hidden;
-  white-space: nowrap;
+  margin: 0;
+  width: 100%;
+  padding: 15px;
 }
 
 .grid .link:last-child {
@@ -245,17 +236,13 @@ p {
   }
   
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 45px;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
   
   .grid .link {
     font-size: 12px;
-    height: 45px !important;
-    min-height: 45px !important;
-    max-height: 45px !important;
-    padding: 8px;
+    padding: 12px;
   }
   
   h1 {
