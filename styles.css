@@ -181,8 +181,9 @@ p {
 .grid .link {
   margin: 0;
   width: 100%;
-  min-height: 50px;
+  height: 50px;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
 .grid .link:last-child {
@@ -237,18 +238,14 @@ p {
   }
   
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
   
   .grid .link {
-    font-size: 13px;
-    min-height: 45px;
-    padding: 10px;
-  }
-  
-  .grid .link:last-child {
-    grid-column: span 1;
+    font-size: 12px;
+    height: 45px;
+    padding: 8px;
   }
   
   h1 {
